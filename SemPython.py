@@ -194,3 +194,186 @@
 # for i in range(1,n+1):
 #     s += (1+(1/i))**i
 # print(f"Cумма последовательности (1+(1/n))^n = {round(s,2)}")
+
+# Семинар 3
+
+# 1. Напишите программу, в которой пользователь будет задавать две строки, а программа - определять количество вхождений одной строки в другой.
+
+# my_text = 'привет мир привет друзья'
+# my_text_1 = 'привет'
+# my_list = my_text.split(" ")
+# current_e = 0
+# for i in my_list:
+#     if i == my_text_1:
+#         current_e += 1
+# print(current_e)
+
+# 2. Сгенерировать рандомное число
+# import datetime
+# print(datetime.datetime.now().microsecond % 100)
+
+# 3. Определить, присутствует ли в заданном списке строк, некоторое число
+# text_1 = ["hi", "my", "name", "is", "Anton", "1"]
+# def find_digit(new_text):
+#     for i in range(len(new_text)):
+#         if new_text[i].isdigit():
+#             print(i)
+
+# find_digit(text_1)
+
+# text_1 = ["5", "8", "32", "55", "7", "8"]
+# num = 8
+# def find_digit(new_text, num):
+#     for i in range(len(new_text)):
+#         if new_text[i].isdigit():
+#             if int(new_text[i]) == num:
+#                 print(i)
+# find_digit(text_1, num)
+
+# 4. Определить, позицию второго вхождения строки в списке либо сообщить, что её нет.
+# Примеры
+# список: ["qwe", "asd", "zxc", "qwe", "ertqwe"], ищем: "qwe", ответ: 3
+# список: ["йцу", "фыв", "ячс", "цук", "йцукен", "йцу"], ищем: "йцу", ответ: 5
+# список: ["йцу", "фыв", "ячс", "цук", "йцукен"], ищем: "йцу", ответ: -1
+# список: ["123", "234", 123, "567"], ищем: "123", ответ: -1
+# список: [], ищем: "123", ответ: -1
+
+# text_1 =["qwe", "asd", "zxc", "ertqwe"]
+# key_word = "qwe"
+# def find_coincidence(new_text, key):
+#     count = 0
+#     for i in range(len(new_text)):
+#         if new_text[i] == key:
+#             count += 1
+#             if count == 2:
+#                 print(i)
+#             break
+#     if count < 2:
+#         print("-1")
+
+# find_coincidence(text_1, key_word)
+
+# Homework 3
+
+# 1. Задайте список из нескольких чисел. Напишите программу, которая найдёт сумму элементов списка, стоящих на нечётной позиции.
+
+# Пример:
+# - [2, 3, 5, 9, 3] -> на нечётных позициях элементы 3 и 9, ответ: 12
+
+# list = [4, 8, 12, 55, 28, 2, 7]
+# list_length = len(list)
+# sum = 0
+# for i in range(1, len(list), 2):
+#         sum += list[i]       
+# print(f"{list} - сумма элементов на нечётных позициях = {sum}")
+
+# 2. Напишите программу, которая найдёт произведение пар чисел списка. Парой считаем первый и последний элемент, второй и предпоследний и т.д.
+
+# Пример:
+# - [2, 3, 4, 5, 6] => [12, 15, 16];
+# - [2, 3, 5, 6] => [12, 15]
+
+# from random import randint
+
+# number = int(input('Введите размер списка '))
+# list = []
+# list2 = []
+
+# for i in range(number):
+#     list.append(randint(1, 10))
+
+# for i in range(len(list)):
+#     while i < len(list)/2 and number > len(list)/2:
+#         number = number - 1
+#         a = list[i] * list[number]
+#         list2.append(a)
+#         i += 1
+
+# print(list)
+# print(list2)
+
+# 3. Задайте список из вещественных чисел. Напишите программу, которая найдёт разницу между максимальным и минимальным значением дробной части элементов.
+
+# Пример:
+# - [1.1, 1.2, 3.1, 5, 10.01] => 0.19
+
+# my_list = [1.1, 1.2, 3.1, 5, 10.01]
+# min = 1
+# max = 0
+# for i in my_list:
+#     if (i - int(i)) <= min:
+#         min = i - int(i)
+#     if (i - int(i)) >= max:
+#         max = i - int(i)
+#         itog= max-min 
+# print(itog)
+
+# 4. Напишите программу, которая будет преобразовывать десятичное число в двоичное.
+
+# Пример:
+# - 45 -> 101101
+# - 3 -> 11
+# - 2 -> 10
+
+# number = int(input("Введите число которое хотите преобразовать: "))
+# print(bin(number))
+# n = int(input())
+# print('{0:b}'.format(n))
+
+# Семинар 4
+
+#1. Ax² + Bx + C = 0
+
+# a, b, c = map(int,input().split())
+# d = b**2 - 4*a*c
+# if d > 0:
+#     print(f'x1 = {round((-b+d**0.5)/(2*a), 2)}, x2 = {round((-b-d**0.5)/(2*a), 2)}')
+# elif d == 0:
+#     print(f'x1 = {round(-b/(2*a), 2)}')
+# else:
+#     print('Корней нет')
+
+# 2. Задайте два числа. Напишите программу, которая найдёт НОК (наименьшее общее кратное) этих двух чисел.
+
+# a, b = map(int, input().split())
+# nod = 2
+# while True:
+#     if a % nod == 0 and b % nod == 0:
+#         break
+# else:
+#     nod += 1
+
+# nok = int(a * b / nod)
+# print(f'nod: {nod}, nok: {nok}')
+
+# Homework 4
+
+# 1. Вычислить число c заданной точностью d
+
+# Пример:
+
+# - при d = 0.001, π = 3.141    10^{-1} ≤ d ≤10^{-10}
+# d= int(input("введите число с заданной точностью: "))
+# import math
+# d = math.pi
+# print(f'Число с заданной точностью равно: {d}')
+
+# 2. Задайте натуральное число N. Напишите программу, которая составит список простых множителей числа N.
+
+# import math
+
+# number=int(input("Введите натуральное число : "))
+# for i in range(2, int(math.sqrt(number)) + 1):
+#     while (number % i == 0):
+#         print(i)
+#         number //= i
+# if (number != 1):
+#     print (number)
+
+# 3. Задайте последовательность чисел. Напишите программу, которая выведет список неповторяющихся элементов исходной последовательности.
+
+# lst = list(map(int, input("Введите числа: ").split()))
+# print(f"Полученный список: {lst}")
+# new_lst = []
+# [new_lst.append(i) for i in lst if i not in new_lst]
+# print(f"Список неповторяющихся элементов: {new_lst}")
